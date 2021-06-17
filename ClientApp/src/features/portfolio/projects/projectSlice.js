@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { fetchCount } from './projectAPI';
 
