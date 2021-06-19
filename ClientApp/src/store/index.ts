@@ -1,5 +1,6 @@
 import * as WeatherForecasts from './WeatherForecasts';
 import * as Counter from './Counter';
+//import all from project slice 
 
 // The top-level state object
 export interface ApplicationState {
@@ -13,6 +14,7 @@ export interface ApplicationState {
 export const reducers = {
     counter: Counter.reducer,
     weatherForecasts: WeatherForecasts.reducer
+    //project reducer
 };
 
 // This type can be used as a hint on action creators so that its 'dispatch' and 'getState' params are

@@ -47,7 +47,6 @@ export default function App() {
 
     useScript('/js/validator.js');
     useScript('/js/main.js');
-    //useScript('/js/particle.js');
     useScript('https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js');
     useScript('https://cdn.rawgit.com/sirxemic/jquery.ripples/master/dist/jquery.ripples-min.js');
     useScript('/js/ripple.js');
