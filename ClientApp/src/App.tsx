@@ -6,6 +6,7 @@ import Counter from './components/Counter';
 import FetchData from './components/FetchData';
 import './custom.css';*/
 
+
 //Hooks
 import useScript from './hooks/useScripts';
 import useScriptAsyc from './hooks/useScriptsAsync';
@@ -16,6 +17,9 @@ import Home from './features/home/Home';
 import Aboutme from './features/about-me/Aboutme';
 import Resume from './features/resume/Resume';
 import Portfolio from './features/portfolio/Portfolio';
+
+
+//Project Pages
 import  Project1  from './features/portfolio/projects/project-1';
 import  Project2  from './features/portfolio/projects/project-2';
 import  Project3  from './features/portfolio/projects/project-3';
