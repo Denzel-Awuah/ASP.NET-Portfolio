@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { fetchCount } from './projectAPI';
 
-const initialState = {
+export const initialState = {
   dataId: "",
   sectiondataId: "",
   leftArrowHref: "",
@@ -82,10 +82,10 @@ export const projectSlice = createSlice({
       state.img = "img/wordApp.jpg";
 
       //Description
-      state.description.push(<li>the first bullet point</li>);
+    /*  state.description.push(<li>the first bullet point</li>);
       state.description.push(<li>the second bullet point</li>);
       state.description.push(<li>the last bullet point</li>);
-      console.log(state.description);
+      console.log(state.description);*/
 
     },
     angularSite: (state) => {

@@ -1,58 +1,56 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  reactThesarus,
-  angularSite,
-  crmWebsite,
-  java,
-  denzelawuahWebsite,
-  selectState,
-  nextProjectPage,
-} from './projectSlice';
+import * as React from 'react';
+import { connect } from 'react-redux';
+import { RouteComponentProps } from 'react-router';
+import { ApplicationState } from '../../../store';
+import * as ProjectStore from '../../../store/Project';
 
 
-export function Project2() {
+type ProjectProps =
+    ProjectStore.ProjectState &
+    typeof ProjectStore.actionCreators &
+    RouteComponentProps<{}>;
 
 
-    //Variable that holds the entire project state 
-    const project = useSelector(state => state.project);
-    const dispatch = useDispatch();
-    //const allActions = [reactThesarus,angularSite,crmWebsite, javaApp, denzelawuahWebsite];
 
-    var toDispatch;
-
-  return (
-  
-      /* Start of Projects page */
-      <section data-id="angularSite" className="animated-section">
-      <div id="ajax-page" className="ajax-page-content">
-          <div className="ajax-page-wrapper">
-              <div className="ajax-page-nav">
-                  <div className="nav-item ajax-page-prev-next">
-                  <a href="#reactapp" onClick={() => dispatch(nextProjectPage(1))} className="nav-anim"  data-animation="62"><i className="lnr lnr-chevron-left"></i></a>
-                      <a href="#denzelawuah-portfolio" onClick={() => dispatch(nextProjectPage(3))} className="nav-anim"  data-animation="63"><i className="lnr lnr-chevron-right"></i></a>
-                  </div>
-                  <div className="nav-item ajax-page-close-button">
-                      <a id="ajax-page-close-button" className="nav-anim" data-animation="21" href="#portfolio"><i className="lnr lnr-cross"></i></a>
-                  </div>
-              </div>
-
-              <div className="ajax-page-title">
-                  <h1>{project.title}</h1>
-              </div>
-
-              <div className="row">
-                        <div className="col-sm col-md portfolio-block">
+class Project4 extends React.PureComponent<ProjectProps> {
 
 
-                            <div className="project-img">
-                                <img src={project.img} alt="" />
+    public render() {
+
+        return (
+            <React.Fragment>
+           
+            <section data-id="crm" className="animated-section">
+                <div id="ajax-page" className="ajax-page-content">
+                    <div className="ajax-page-wrapper">
+                        <div className="ajax-page-nav">
+                            <div className="nav-item ajax-page-prev-next">
+                                <a href={this.props.leftArrowHref} onClick={() => { this.props.denzel(); }} className="nav-anim" data-animation="27"><i className="lnr lnr-chevron-left"></i></a>
+                                <a href={this.props.rightArrowHref} onClick={() => { this.props.java(); }} className="nav-anim" data-animation="27"><i className="lnr lnr-chevron-right"></i></a>
+                                {/* <a href={project.rightArrowHref} onClick={() => dispatch(angularSite())} className="nav-anim" data-animation="22"><i className="lnr lnr-chevron-right"></i></a> */}
+
+                            </div>
+                            <div className="nav-item ajax-page-close-button">
+                                <a id="ajax-page-close-button" className="nav-anim" data-animation="21" href="#portfolio"><i className="lnr lnr-cross"></i></a>
+                            </div>
+                        </div>
+
+                        <div className="ajax-page-title">
+                            <h1>{this.props.title}</h1>
+                        </div>
+
+                        <div className="row">
+                            <div className="col-sm col-md portfolio-block">
+
+
+                                <div className="project-img">
+                                    <img src={this.props.img} alt="" />
+                                </div>
+
                             </div>
 
                         </div>
-
-                    </div>
-                    <div className="col-sm-12 col-md-12 portfolio-block">
+                        <div className="col-sm-12 col-md-12 portfolio-block">
                             {/* <!-- Project Description --> */}
                             <div className="project-description">
                                 <div className="block-title">
@@ -66,7 +64,7 @@ export function Project2() {
                                     <li><p><i className="fa fa-calendar"></i> 25 december, 2016</p></li>
                                 </ul>
 
-                                {project.description}
+                                    {this.props.description}
 
                                 <p className="text-justify">Aliquam euismod aliquam massa, quis eleifend dui sodales vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                                 {/* <!-- /Project Description --> */}
@@ -99,11 +97,18 @@ export function Project2() {
                             </div>
                             {/* <!-- Project Description --> */}
                         </div>
-          </div>
-      </div>
-</section>
+                    </div>
+                </div>
+            </section>
+          </React.Fragment>
+            /* End of Projects page */
 
-  /* End of Projects page */
-  
-  );
-}
+        ); //End return
+    } //End Render
+} // End Class
+
+
+export default connect(
+    (state: ApplicationState) => state.project,
+    ProjectStore.actionCreators
+)(Project4);

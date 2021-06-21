@@ -16,11 +16,11 @@ import Home from './features/home/Home';
 import Aboutme from './features/about-me/Aboutme';
 import Resume from './features/resume/Resume';
 import Portfolio from './features/portfolio/Portfolio';
-import { Project1 } from './features/portfolio/projects/project-1';
-import { Project2 } from './features/portfolio/projects/project-2';
-import { Project3 } from './features/portfolio/projects/project-3';
-import { Project4 } from './features/portfolio/projects/project-4';
-import { Project5 } from './features/portfolio/projects/project-5';
+import  Project1  from './features/portfolio/projects/project-1';
+import  Project2  from './features/portfolio/projects/project-2';
+import  Project3  from './features/portfolio/projects/project-3';
+import  Project4  from './features/portfolio/projects/project-4';
+import  Project5  from './features/portfolio/projects/project-5';
 import { Contact } from './features/contact/contact';
 
 
@@ -213,11 +213,11 @@ export default function App() {
 
 
                             {/* Projects  */}
-{/*                          <Project1 />
+                            <Project1 />
                             <Project2 />
                             <Project3 />
                             <Project4 />
-                            <Project5 />*/}
+                            <Project5 />
                             {/* End of Projects */}
 
                             {/* Contact Sub Page */}
