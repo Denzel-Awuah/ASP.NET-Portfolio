@@ -92,8 +92,67 @@ class Project1 extends React.PureComponent<ProjectProps> {
                                     <a href="#" target="_blank" className="btn"><i className="fab fa-facebook-f"></i> </a>
                                     <a href="#" target="_blank" className="btn"><i className="fab fa-twitter"></i> </a>
                                     <a href="#" target="_blank" className="btn"><i className="fab fa-dribbble"></i> </a>
-                                </div>
+                                    </div>                        
                                 {/* <!-- /Share Buttons --> */}
+
+                                    {/* <!-- Clients --> */}
+                                    <div className="row">
+                                        <div className="col-xs-12 col-sm-12">
+                                            <div className="block-title">
+                                                <h3>Other Projects</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="row">
+                                        <div className="col-xs-12 col-sm-12">
+                                            <div className="clients owl-carousel">
+
+                                                <div className="client-block">
+                                                    <a href="#reactapp" onClick={() => { this.props.react(); }} className="nav-anim" data-animation="27">
+                                                        <img src="img/wordApp.jpg" alt="Logo" />
+                                                        
+                                                    </a>
+                                                    <p>React</p>
+                                                </div>
+
+                                                <div className="client-block">
+                                                    <a href="#angularSite" onClick={() => { this.props.angular(); }} className="nav-anim" data-animation="27">
+                                                        <img src="img/home1.jpg" alt="Logo" />
+                                                        
+                                                    </a>
+                                                    <p>Angular</p>
+                                                </div>
+
+                                                <div className="client-block">
+                                                    <a href="#denzelawuah-portfolio" onClick={() => { this.props.denzel(); }} className="nav-anim" data-animation="27">
+                                                        <img src="img/hackdenzel3.jpg" alt="Logo" />
+                                                        
+                                                    </a>
+                                                    <p>Node js</p>
+                                                </div>
+
+                                                <div className="client-block">
+                                                    <a href="#crm" onClick={() => { this.props.crm(); }} className="nav-anim" data-animation="27">
+                                                        <img src="img/crm2.jpg" alt="Logo" />
+                                                        
+                                                    </a>
+                                                    <p>CRM</p>
+                                                </div>
+
+                                                <div className="client-block">
+                                                    <a href="#java" onClick={() => { this.props.java(); }} className="nav-anim" data-animation="27">
+                                                        <img src="img/chat3.jpg" alt="Logo" />
+                                                        
+                                                    </a>
+                                                    <p>Java</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* <!-- End of Clients --> */}
+
                             </div>
                             {/* <!-- Project Description --> */}
                         </div>
@@ -102,7 +161,6 @@ class Project1 extends React.PureComponent<ProjectProps> {
             </section>
           </React.Fragment>
             /* End of Projects page */
-
         ); //End return
     } //End Render
 } // End Class
